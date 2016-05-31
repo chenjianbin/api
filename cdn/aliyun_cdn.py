@@ -3,11 +3,20 @@
 ''' manage aliyun cdn '''
 
 import urllib.request
-import 
+import configparser
+import uuid
 
-url='http://'
-aliyun_url='http://'
+config = configparser.ConfigParser()
+config.read('../config/aliyun.conf')
+URL = config.get('cdn','url')
+FORMAT = config.get('cdn','format')
+ACCESSKEYID = config.get('cdn','accesskeyid')
+ACCESSKEYSECRET = config.get('cdn','accesskeysecret')
+SIGNATUREVERSION = config.get('cdn','signatureversion')
+SIGNATUREMOTHOD = config.get('cdn','signaturemethod')
 
-def flush():
-    with urllib.request.openurl() as f:
-        print (f.read())
+
+def Flush():
+    #with urllib.request.openurl() as f:
+     #   print (f.read())
+	pass
