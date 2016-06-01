@@ -1,0 +1,12 @@
+[key]
+accesskeyid = 'xxxxxxxxxxxx'
+accesskeysecret = 'xxxxxxxxxxxxxxxxxxxxxx'
+
+[cdn]
+url = https//www.xxx.com
+format = 'JSON'
+version = '2014-11-11'
+signatureversion = '1.0'
+signaturemethod = 'HMAC-SHA1'
+#signaturenonce = str(uuid.uuid1()),
+#timestamp = 1

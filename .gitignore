@@ -1,6 +1,5 @@
 #file
 *.py[cod]
-config*
-
+*.conf
 #dir
 __pycache__/
