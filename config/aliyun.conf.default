@@ -1,12 +1,10 @@
 [key]
-accesskeyid = 'xxxxxxxxxxxx'
-accesskeysecret = 'xxxxxxxxxxxxxxxxxxxxxx'
+accesskeyid = 
+accesskeysecret = 
 
 [cdn]
-url = https//www.xxx.com
-format = 'JSON'
-version = '2014-11-11'
-signatureversion = '1.0'
-signaturemethod = 'HMAC-SHA1'
-#signaturenonce = str(uuid.uuid1()),
-#timestamp = 1
+serveraddress = https://cdn.aliyuncs.com
+format = JSON
+version = 2014-11-11
+signatureversion = 1.0
+signaturemethod = HMAC-SHA1

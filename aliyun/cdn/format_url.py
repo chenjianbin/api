@@ -10,7 +10,6 @@ import hashlib
 import base64
 
 CONFIGFILE = 'config/aliyun.conf'
-print(CONFIGFILE)
 CONFIGSECTION = 'cdn'
 
 CONFIG = configparser.ConfigParser()
