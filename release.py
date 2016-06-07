@@ -6,9 +6,11 @@ import aliyun.cdn.format_url as format_url
 import configparser
 import common.hosts
 import re
+import os
 
+CONFIGFILE = os.path.split(os.path.realpath(__file__))[0] + '/' + 'config/site.conf'
 CONFIG = configparser.ConfigParser()
-CONFIG.read('config/site.conf')
+CONFIG.read(CONFIGFILE)
 SITE = CONFIG.get('site', 'site')
 D = CONFIG.get('site_root_dirname', SITE)
 INS = common.hosts.Hosts(SITE)
@@ -32,8 +34,9 @@ def release():
 		
 
 def get_m_file():
+	configfile = os.path.split(os.path.realpath(__file__))[0] + '/' + 'config/aliyun.conf'
 	config = configparser.ConfigParser()
-	config.read('config/aliyun.conf')
+	config.read(configfile)
 	filetypes = config.get('cdn', 'filetypes')
 	ins = sync.git.Git(HOSTS[0], D, SITE)
 	stdout, stderr = ins.get_diff_files()
@@ -46,7 +49,7 @@ def get_m_file():
 
 def flush_cdn():
 	config = configparser.ConfigParser()
-	config.read('config/site.conf')
+	config.read(CONFIGFILE)
 	domain = config.get('site_static', SITE)
 	args_dict = {}
 	args_dict['Action'] = 'RefreshObjectCaches'

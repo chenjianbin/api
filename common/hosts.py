@@ -1,9 +1,11 @@
 #!/usr/bin/env python
 #-- coding:utf-8 --
 import configparser
+import os
 
+CONFIGFILE = os.path.split(os.path.realpath(__file__))[0] + '/' + '../config/site.conf'
 CONFIG = configparser.ConfigParser()
-CONFIG.read('config/site.conf')
+CONFIG.read(CONFIGFILE)
 
 class Hosts(object):
 	def __init__(self, domain):

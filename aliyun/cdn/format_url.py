@@ -9,7 +9,7 @@ import hmac
 import hashlib
 import base64
 
-CONFIGFILE = 'config/aliyun.conf'
+CONFIGFILE = os.path.split(os.path.realpath(__file__))[0] + '/' + '../../config/aliyun.conf'
 CONFIGSECTION = 'cdn'
 
 CONFIG = configparser.ConfigParser()
