@@ -21,7 +21,7 @@ ACCESSKEYSECRET = CONFIG.get('key', 'accesskeysecret')
 对请求的URL进行签名以及编码
 参考https://help.aliyun.com/document_detail/27149.html?spm=5176.doc27200.6.139.paDf9R
 '''
-class FormatURL(object):
+class Format(object):
 	def __init__(self,args):
 		self.argsdict = {}
 		self.argsdict['TimeStamp'] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
