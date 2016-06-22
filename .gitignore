@@ -1,5 +1,5 @@
 #file
 *.py[cod]
-*.conf
+*.ini
 #dir
 __pycache__/
