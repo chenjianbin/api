@@ -33,7 +33,7 @@ class Git(object):
 		return ssh.execute()
 
 	def get_m_files(self, version_old='HEAD~', version_new='HEAD'):
-		configfile = os.path.split(os.path.realpath(__file__))[0] + '/' + '../config/aliyun.conf'
+		configfile = os.path.split(os.path.realpath(__file__))[0] + '/' + '../config/aliyun.ini'
 		config = configparser.ConfigParser()
 		config.read(configfile)
 		filetypes = config.get('cdn', 'filetypes')

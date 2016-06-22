@@ -5,7 +5,7 @@ import common.hosts
 import os
 import aliyun.cdn.flush as CDNFlush
 
-CONFIGFILE = os.path.split(os.path.realpath(__file__))[0] + '/' + 'config/site.conf'
+CONFIGFILE = os.path.split(os.path.realpath(__file__))[0] + '/' + 'config/site.ini'
 CONFIG = configparser.ConfigParser()
 CONFIG.read(CONFIGFILE)
 SITE = CONFIG.get('site', 'site')
