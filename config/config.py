@@ -7,6 +7,6 @@ class Config(object):
 class Database(Config):
 	DBHOST = '127.0.0.1'
 	DBPORT = 3306
-	DBNAME = 'release'
-	DBUSER = 'release'
-	DBPASSWD = 'xxxxx'
+	DBNAME = 'ops'
+	DBUSER = 'ops'
+	DBPASSWD = 'nbycm0fukZsdn1MG'
