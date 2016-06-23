@@ -16,7 +16,7 @@ class Git(object):
 		'''
 		更新线上代码
 		'''
-		command = 'cd %s%s && git pull' % (self.dirname, self.site)
+		command = 'cd %s/%s && git pull' % (self.dirname, self.site)
 		ssh = common.ssh.SSHClient(self.host, command)
 		return ssh.execute()
 
@@ -24,11 +24,7 @@ class Git(object):
 		'''
 		获取两个git版本的差异文件列表
 		'''
-		#configfile = os.path.split(os.path.realpath(__file__))[0] + '/' + '../config/aliyun.conf'
-		#config = configparser.ConfigParser()
-		#config.read(configfile)
-		#filetypes = config.get('cdn', 'filetypes')
-		command = 'cd %s%s && git diff-tree -r --name-status --no-commit-id %s %s' % (self.dirname, self.site, version_old, version_new)
+		command = 'cd %s/%s && git diff-tree -r --name-status --no-commit-id %s %s' % (self.dirname, self.site, version_old, version_new)
 		ssh = common.ssh.SSHClient(self.host, command)
 		return ssh.execute()
 
