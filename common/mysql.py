@@ -6,11 +6,11 @@ import json
 
 app = flask.Flask(__name__)
 app.config.from_object('config.config.Database')
-DBHOST = app.config['DBHOST']
-DBPORT = app.config['DBPORT']
-DBUSER = app.config['DBUSER']
-DBPASSWD = app.config['DBPASSWD']
-DBNAME = app.config['DBNAME']
+DBHOST = app.config.get('DBHOST')
+DBPORT = app.config.get('DBPORT')
+DBUSER = app.config.get('DBUSER')
+DBPASSWD = app.config.get('DBPASSWD')
+DBNAME = app.config.get('DBNAME')
 
 class Connect(object):
 	def __init__(self):

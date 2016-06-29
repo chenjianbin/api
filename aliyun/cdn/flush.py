@@ -12,16 +12,18 @@ class Flush(object):
 		self.files = files
 
 	def run(self):
+		message = ''
 		for f in files:
 			self.argsdict['ObjectPath'] = self.domain + '/' + f
 			print('flush http://%s' % self.argsdict['ObjectPath'])
 			ins = format_url.Format(self.argsdict) 
 			url = ins.compose_url()
 			try:
-				with urllib.request.urlopen(url) as res:
-					res = res.read().decode('utf-8')
-			except urllib.error.HTTPError as res:
-				res = str(res)
+				with urllib.request.urlopen(url) as mes:
+					mes = mes.read().decode('utf-8')
+			except urllib.error.HTTPError as mes:
+				mes = str(mes)
 			finally:
-				print(res)
+				message = message + mes
+		return message
 					

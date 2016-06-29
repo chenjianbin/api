@@ -7,7 +7,7 @@ app = flask.Flask(__name__)
 app.config.from_object('config.config.Database')
 app.config.from_object('config.config.Mail')
 
-app.debug = False
+app.debug = True
 @app.route('/login', methods=['GET', 'POST'])
 def login():
 	pass
@@ -16,7 +16,7 @@ def login():
 def release(domain):
 	ins = language.php.Update(domain)
 	res = ins.run()
-	app.logger.info('An error occurred')
+	logging.debug('An error occurred')
 	return res
 
 class Log(object):
@@ -30,6 +30,7 @@ class Log(object):
 
 	def switch(self, status=False):
 		if status:
+			import logging
 			import logging.handlers
 			mail_handler = logging.handlers.SMTPHandler(self.mailhost, self.fromaddr, self.toaddr, self.subject, credentials=(self.mailuser, self.mailpasswd))
 			mail_handler.setLevel(logging.DEBUG)
@@ -47,8 +48,11 @@ class Log(object):
 			file_handler = logging.FileHandler('logs/test.log', mode='a', encoding='utf8')
 			file_handler.setLevel(logging.DEBUG)
 			file_handler.setFormatter(logging.Formatter('[%(asctime)s] [%(levelname)s]: %(message)s ''[in %(pathname)s:%(lineno)d]'))
-			app.logger.addHandler(mail_handler)
-			app.logger.addHandler(file_handler)
+			print('222')
+			#logging.logger.addHandler(mail_handler)
+			logging.getLogger('').addHandler(mail_handler)
+			#logging.logger.addHandler(file_handler)
+			#logging.getLogger('').addHandler(file_handler)
 			
 
 if __name__ == '__main__':

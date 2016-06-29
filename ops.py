@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import sync.git
+import common.git
 import common.site
 import aliyun.cdn.flush as CDNFlush
 import json

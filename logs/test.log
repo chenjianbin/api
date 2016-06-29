@@ -1,0 +1,8 @@
+An error occurred
+2016-06-27 16:48:42,043 ERROR: An error occurred [in entry.py:18]
+2016-06-27 16:56:20,897 WARNING: An error occurred [in entry.py:18]
+[2016-06-27 17:20:55,079] [WARNING]:  * Debugger is active! [in /data0/python/venv/lib/python3.4/site-packages/werkzeug/_internal.py:87]
+[2016-06-27 17:21:43,635] [WARNING]:  * Debugger is active! [in /data0/python/venv/lib/python3.4/site-packages/werkzeug/_internal.py:87]
+[2016-06-27 17:23:41,300] [WARNING]:  * Debugger is active! [in /data0/python/venv/lib/python3.4/site-packages/werkzeug/_internal.py:87]
+[2016-06-27 17:27:27,998] [WARNING]:  * Debugger is active! [in /data0/python/venv/lib/python3.4/site-packages/werkzeug/_internal.py:87]
+[2016-06-27 17:54:15,732] [ERROR]: An error occurred [in entry.py:19]

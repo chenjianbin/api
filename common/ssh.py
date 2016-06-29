@@ -3,7 +3,7 @@
 import paramiko
 
 class SSHClient(object):
-	def __init__(self, hostname, command, port=50000):
+	def __init__(self, hostname, command, port=22):
 		self.hostname = hostname
 		self.port = port
 		self.command = command
