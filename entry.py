@@ -1,11 +1,13 @@
 #!/usr/bin/env python
-import flask
+from flask import Flask, render_template
 import language.php
 import logging
+from flask_bootstrap import Bootstrap
 
-app = flask.Flask(__name__)
+app = Flask(__name__)
 app.config.from_object('config.config.Database')
 app.config.from_object('config.config.Mail')
+Bootstrap(app)
 
 app.debug = False
 @app.route('/login', methods=['GET', 'POST'])
@@ -18,6 +20,10 @@ def release(domain):
 	res = ins.run()
 	app.logger.info('An error occurred')
 	return res
+
+@app.errorhandler(404)
+def page_not_found(e):
+	return render_template('404.html'), 404
 
 class Log(object):
 	def __init__(self):
