@@ -3,6 +3,7 @@ import common.git
 import common.site
 import aliyun.cdn.flush as CDNFlush
 import json
+import requests
 
 SITE = 'www.zhangshangduobao.net'
 INS = common.site.Site(SITE)
